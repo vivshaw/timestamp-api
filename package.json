@@ -4,7 +4,7 @@
   "description": "timestamp api",
   "engines": {
     "node": "4.7.3",
-    "npm": "2.5.11"
+    "npm": "2.15.11"
   },
   "main": "server.js",
   "scripts": {
