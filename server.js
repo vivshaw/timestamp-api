@@ -21,7 +21,7 @@ app.get('/:date', function (req, res) {
       natural: `${months[date.month()]} ${date.date()}, ${date.year()}`
     })
   } else {
-    res.send({})
+    res.send({unix: null, natural: null})
   }
 })
 
