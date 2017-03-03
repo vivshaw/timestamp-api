@@ -1,38 +1,29 @@
-doctype html
-html  
-  head
-    title Timestamp API
-    link(rel='stylesheet', href='/css/main.css')
-    link(rel='stylesheet prefetch',
-         href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css',
-         integrity='sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ',
-         crossorigin='anonymous')
-    script(src='https://use.fontawesome.com/0e013528d3.js')
-    
-  body
-    .jumbotron
-      .container
-        h1.display-3 Timestamp API
-        p
-          |This is a timestamp API built for a 
-          a(href = 'https://www.freecodecamp.com/') 
-            i.fa.fa-free-code-camp
-            |  FreeCodeCamp
-          |  project. It accepts queries containing a Unix timestamp (1488501712)
-          | or natural date (March 1, 2017), and returns a JSON object
-          | containing both the natural date and Unix timestamp.
-            
+extends default.pug
+
+block content
+  .jumbotron
     .container
-      h2 Example usage:
+      h1.display-3 Timestamp API
       p
-        code https://timestamp-ms.herokuapp.com/March%201,%202017
-      p
-        code https://timestamp-ms.herokuapp.com/1488501712
-        
-      h2 Example output:
-      p
-        code { "unix": 1488501712, "natural": "March 1, 2017" }
-            
+        |This is a timestamp API built for a 
+        a(href = 'https://www.freecodecamp.com/') 
+          i.fa.fa-free-code-camp
+          |  FreeCodeCamp
+        |  project. It accepts queries containing a Unix timestamp (1488501712)
+        | or natural date (March 1, 2017), and returns a JSON object
+        | containing both the natural date and Unix timestamp.
+          
+  .container
+    h2 Example usage:
+    p
+      code https://timestamp-ms.herokuapp.com/March%201,%202017
+    p
+      code https://timestamp-ms.herokuapp.com/1488501712
+      
+    h2 Example output:
+    p
+      code { "unix": 1488501712, "natural": "March 1, 2017" }
+          
   script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js',
-         integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn',
-         crossorigin='anonymous')
+       integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn',
+       crossorigin='anonymous')
