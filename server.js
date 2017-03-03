@@ -8,7 +8,7 @@ app.set('views', 'templates')
 app.set('view engine', 'pug')
 
 app.get('/', function (req, res) {
-  res.render('index')
+  res.render('index', {basedir: __dirname})
 })
 
 app.get('/:date', function (req, res) {
