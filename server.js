@@ -2,7 +2,7 @@ var express = require('express')
 var moment = require('moment')
 
 var app = express()
-app.use(express.static(__dirname + '/static'));
+app.use(express.static('static'));
 app.set('view engine', 'pug')
 
 app.get('/', function (req, res) {
