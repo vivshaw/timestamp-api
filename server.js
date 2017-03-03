@@ -2,7 +2,9 @@ var express = require('express')
 var moment = require('moment')
 
 var app = express()
+
 app.use(express.static('static'));
+app.set('views', 'templates')
 app.set('view engine', 'pug')
 
 app.get('/', function (req, res) {
@@ -24,7 +26,6 @@ app.get('/:date', function (req, res) {
     res.send({unix: null, natural: null})
   }
 })
-
 
 app.listen(process.env.PORT || 8080, function () {
   console.log('Timestamp app listening on port 8080!')
