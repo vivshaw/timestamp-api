@@ -12,7 +12,7 @@
     "build": "npm run clean && npm run build-css",
     "watch": "npm run clean && npm run watch-css & nodemon server -e js,pug",
     "start": "node server",
-    "heroku-postbuild": "echo This runs afterwards."
+    "heroku-postbuild": "stylus source/stylesheets/main.styl -o static/css"
   },
   "author": "",
   "license": "ISC",
