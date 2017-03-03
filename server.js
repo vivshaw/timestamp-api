@@ -17,7 +17,7 @@ app.get('/:date', function (req, res) {
   
   if (date.isValid()) {
     res.send({
-      unixtime: date.unix(),
+      unix: date.unix(),
       natural: `${months[date.month()]} ${date.date()}, ${date.year()}`
     })
   } else {
