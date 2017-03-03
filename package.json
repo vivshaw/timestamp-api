@@ -2,7 +2,7 @@
   "name": "timestamp",
   "version": "1.0.0",
   "description": "timestamp api",
-  "engines": {"node": "4.7.3"}
+  "engines": {"node": "4.7.3"},
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
