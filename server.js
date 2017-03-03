@@ -13,7 +13,7 @@ app.get('/:date', function (req, res) {
   var months = ['January','February','March','April','May','June','July',
                 'August','September','October','November','December']
   var query = req.params.date
-  var date = new moment(isNaN(query) ? query : query * 1000)
+  var date = moment(isNaN(query) ? query : query * 1000)
   
   if (date.isValid()) {
     res.send({
