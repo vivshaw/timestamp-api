@@ -26,6 +26,6 @@ app.get('/:date', function (req, res) {
 })
 
 
-app.listen(8080, function () {
+app.listen(process.env.PORT || 8080, function () {
   console.log('Timestamp app listening on port 8080!')
 })
