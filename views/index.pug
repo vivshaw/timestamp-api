@@ -23,7 +23,12 @@ block content
     h2 Example output:
     p
       code { "unix": 1488501712, "natural": "March 1, 2017" }
-          
-  script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js',
-       integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn',
-       crossorigin='anonymous')
+      
+    h2 Try it!
+    p Input a date here and see what comes out.
+    form(onsubmit='return go()')
+      label(for=url) Date: 
+      input(type='text' name='url' id='url')
+
+block scripts
+  script(src='js/go.js')
