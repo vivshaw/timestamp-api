@@ -2,7 +2,7 @@ var express = require('express')
 var pug = require('pug')
 
 var app = express()
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/static'));
 app.set('view engine', 'pug')
 
 app.get('/', function (req, res) {
