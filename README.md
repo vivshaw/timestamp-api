@@ -9,13 +9,15 @@ timestamp API for [FreeCodeCamp](https://www.freecodecamp.com/challenges/timesta
   "pug": "^2.0.0-beta11",
   "stylus": "^0.54.5"
 }
- ```
+```
  
- ## Using
- `node run watch`
+## Usage
+```
+node run watch
+```
  
- or
- ```
- node run build-css
- node run start
- ```
+or
+```
+node run build-css
+node run start
+```
