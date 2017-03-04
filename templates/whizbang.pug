@@ -1,7 +1,8 @@
 doctype html
 html  
   head
-    title Timestamp API
+    block head
+    
     link(rel="icon" type="image/png" href="images/favicon.png" sizes="32x32")
     link(rel='stylesheet' href='css/main.css')
     link(rel='stylesheet prefetch'
@@ -12,10 +13,26 @@ html
     
   body
     include /node_modules/octopug/octopug.pug
-    +octopug('https://github.com/vivshaw/timestamp-api', '#fff', '#6f5499')
+    +octopug(github, octocatColors[0], octocatColors[1])
+    
+    .jumbotron
+      .container
+        block jumbotron
+    
     block content
     
+    footer.footer
+      .container
+        span.text-muted
+          | Built with 
+          i.fa.fa-heart.with-heart
+          |  on Node.js / 
+          | Fork me on 
+          a(href=github) github
+          
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'
            integrity='sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn'
            crossorigin='anonymous')
+    script(src='js/go.js')
+    
     block scripts

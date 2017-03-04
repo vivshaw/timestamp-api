@@ -1,35 +1,47 @@
-extends default.pug
+extends whizbang.pug
+
+block head
+  - var baseurl = 'https://freecodecamp-api-vivshaw.c9users.io/api/'
+  - var github = 'https://github.com/vivshaw/timestamp-api'
+  - var octocatColors = ['#fff', '#6f5499']
+  
+  title Timestamp API
+
+block jumbotron
+  h1.display-3 Timestamp API
+  p
+    |This is a timestamp API built for a 
+    a(href = 'https://www.freecodecamp.com/') 
+      i.fa.fa-free-code-camp
+      |  FreeCodeCamp
+    |  project. It accepts queries containing a Unix timestamp (1488501712)
+    | or natural date (March 1, 2017), and returns a JSON object
+    | containing both the natural date and Unix timestamp.
 
 block content
-  .jumbotron
-    .container
-      h1.display-3 Timestamp API
-      p
-        |This is a timestamp API built for a 
-        a(href = 'https://www.freecodecamp.com/') 
-          i.fa.fa-free-code-camp
-          |  FreeCodeCamp
-        |  project. It accepts queries containing a Unix timestamp (1488501712)
-        | or natural date (March 1, 2017), and returns a JSON object
-        | containing both the natural date and Unix timestamp.
-          
   .container
-    h2 Example usage:
-    p
-      code https://timestamp-codecamp.herokuapp.com/March%201,%202017
-    p
-      code https://timestamp-codecamp.herokuapp.com/1488501712
+    .row
+      .col-md-6
+        h2 Example usage:
+        p
+          code #{baseurl}?date=March%201,%202017
+        p
+          code #{baseurl}?date=1488501712
+          
+        h2 Example output:
+        p
+          code { "unix": 1488501712, "natural": "March 1, 2017" }
+          
+        h2 Try it!
+        p Input a date or Unix timestamp here and see what comes out.
+        form(method='GET' action=baseurl)
+          label(for=date) Date: 
+          input(type='text' name='date' id='query')
+          button.btn.btn-primary Submit
       
-    h2 Example output:
-    p
-      code { "unix": 1488501712, "natural": "March 1, 2017" }
-      
-    h2 Try it!
-    p Input a date here and see what comes out.
-    form(onsubmit='return go()')
-      label(for=url) Date: 
-      input(type='text' name='url' id='url')
-      button.btn.btn-primary Submit
-
-block scripts
-  script(src='js/go.js')
+      .col-md-6
+        h2 User stories:
+        ol
+          li I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016).
+          li If it does, it returns both the Unix timestamp and the natural language form of that date.
+          li If it does not contain a date or Unix timestamp, it returns null for those properties.
